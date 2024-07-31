@@ -1,0 +1,165 @@
+.slide {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  min-height: 656px;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    padding-top: 60px;
+    padding-bottom: 0;
+    min-height: 828px;
+  }
+
+  @media (min-width: $desktop) {
+    min-height: 714px;
+    padding-top: 30px;
+    padding-bottom: 84px;
+  }
+
+  &--flat-white {
+    background-color: $flat-white;
+
+    @media ($tablet-only) {
+      background: linear-gradient($flat-white 640px, $base-white 640px);
+    }
+  }
+
+  &--lavender {
+    background-color: $lavender-latte;
+
+    @media ($tablet-only) {
+      background: linear-gradient($lavender-latte 640px, $base-white 640px);
+    }
+  }
+
+  &--espresso {
+    background-color: $espresso;
+
+    @media ($tablet-only) {
+      background: linear-gradient($espresso 640px, $base-white 640px);
+    }
+  }
+}
+
+.slide__inner {
+  @media ($tablet-only) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 610px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 600px 625px;
+    align-items: center;
+    column-gap: 30px;
+    padding-right: 40px;
+    padding-left: 65px;
+  }
+
+  & picture {
+    @media (min-width: $tablet) {
+      margin-bottom: 0;
+      order: 1;
+    }
+
+    @media (min-width: $desktop) {
+      order: 0;
+    }
+  }
+}
+
+.slide__img {
+  display: block;
+  margin-bottom: 10px;
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+
+  @media (min-width: $tablet) {
+    width: 476px;
+    height: 476px;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $desktop) {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+.slide__about-wrapper {
+  @media (min-width: $desktop) {
+    text-align: left;
+  }
+}
+
+.slide__label {
+  display: block;
+
+  @include label;
+}
+
+.slide__title {
+  @include slide-title;
+  margin-bottom: 10px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 16px;
+  }
+}
+
+.slide__description {
+  margin: 0;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet) {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.slide__order-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+
+  @media ($tablet-only) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $desktop) {
+    justify-content: flex-start;
+  }
+}
+
+.slide__full-price {
+  margin: 0;
+  line-height: 32px;
+}
+
+.slide__old-price {
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 16px;
+  color: $base-primary;
+  text-decoration: line-through;
+}
+
+.slide__new-price {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.slide__order-link {
+  min-height: 40px;
+}

@@ -1,0 +1,100 @@
+.slider__inner .slider__pagination {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 60px;
+}
+
+.slider__pagination {
+  @media (max-width: $mobile-tablet) {
+    display: none;
+  }
+
+  .swiper-pagination-bullet {
+    width: 62px;
+    height: 4px;
+    margin-right: 5px !important; // не смог переопределить маргины буллетов без !important
+    margin-left: 5px !important;
+    border-radius: 0;
+    background-color: $base-white;
+    opacity: 1;
+
+    &:hover {
+      background-color: $primary-opacity;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $base-primary;
+  }
+
+  .swiper-pagination-bullet-active:hover {
+    background-color: $base-primary;
+  }
+}
+
+.slider__button-wrapper {
+  position: absolute;
+  inset: 0;
+  margin: 0 auto;
+  width: 320px;
+
+  @media (min-width: $tablet) {
+    width: 768px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 1440px;
+  }
+}
+
+.slider__button {
+  top: 0;
+  width: 20px;
+  height: 100%;
+  margin: 0;
+
+  @media (min-width: $tablet) {
+    width: 80px;
+  }
+
+  @media ($tablet-only) {
+    height: 640px;
+  }
+
+  &::after {
+    width: 20px;
+    color: $base-primary;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &--prev {
+    left: 0;
+
+    &:hover {
+      @media (min-width: $tablet) {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      }
+    }
+
+    &:active {
+      background: linear-gradient(90deg, rgba(120, 89, 207, 0.25), rgba(255, 255, 255, 0));
+    }
+  }
+
+  &--next {
+    right: 0;
+
+    &:hover {
+      @media (min-width: $tablet) {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+      }
+    }
+
+    &:active {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(120, 89, 207, 0.25));
+    }
+  }
+}

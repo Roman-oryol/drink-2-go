@@ -1,0 +1,23 @@
+.visually-hidden {
+  position: fixed;
+  right: 200vw;
+}
+
+.container {
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (min-width: $tablet) {
+    width: 768px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 1440px;
+    padding: 0 40px;
+  }
+}
+
+.hidden {
+  display: none;
+}

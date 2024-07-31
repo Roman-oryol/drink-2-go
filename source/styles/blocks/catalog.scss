@@ -1,0 +1,38 @@
+.catalog {
+  padding-top: 50px;
+  padding-bottom: 44px;
+  background-color: $lightest-grey;
+
+  @media (min-width: $tablet) {
+    padding-top: 80px;
+    padding-bottom: 90px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+}
+
+.catalog__label {
+  @include label;
+  text-align: center;
+}
+
+.catalog__title {
+  @include big-title;
+  margin-bottom: 20px;
+  text-align: center;
+
+  @media (min-width: $desktop) {
+    margin-bottom: 36px;
+  }
+}
+
+.catalog__layout {
+  @media (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 318px 1fr;
+    column-gap: 30px;
+  }
+}

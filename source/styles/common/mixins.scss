@@ -1,0 +1,58 @@
+// Оформление заголовков
+
+@mixin slide-title {
+  margin: 0;
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+
+  @media (min-width: $tablet) {
+    font-size: 56px;
+    line-height: 80px;
+  }
+}
+
+@mixin big-title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+
+  @media (min-width: $tablet) {
+    font-size: 42px;
+    line-height: 64px;
+  }
+}
+
+@mixin medium-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 700;
+
+  @media (min-width: $tablet) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+@mixin small-title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: $base-primary;
+}
+
+@mixin label {
+  margin: 0;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: $base-primary;
+  text-transform: uppercase;
+}

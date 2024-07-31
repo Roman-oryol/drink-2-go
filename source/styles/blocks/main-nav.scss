@@ -1,0 +1,282 @@
+.main-nav {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  grid-template-rows: min-content auto;
+  align-items: center;
+
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: 82px 1fr 180px;
+    grid-template-rows: min-content;
+  }
+
+  @media (min-width: $desktop) {
+    grid-template-columns: 330px 1fr 423px;
+  }
+
+  &--opened .main-nav__site-list {
+    display: block;
+  }
+
+  &--opened .main-nav__toggle {
+    background-image: url("../../icons/mobile-menu-button-close.svg");
+  }
+
+  &--no-js .main-nav__site-list {
+    display: block;
+  }
+}
+
+.main-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav__logo {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  width: 32px;
+  height: 36px;
+  margin-left: 20px;
+
+  @media (min-width: $tablet) {
+    width: 82px;
+    margin-left: 0;
+  }
+
+  @media (min-width: $desktop) {
+    width: auto;
+  }
+}
+
+.main-nav__logo-text {
+  @media (max-width: $mobile-tablet) {
+    display: none;
+  }
+  width: 140px;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: none;
+}
+
+.main-nav__logo-img {
+  display: block;
+  width: 32px;
+  height: 36px;
+
+  @media (min-width: $tablet) {
+    width: 82px;
+    height: 36px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 170px;
+  }
+}
+
+.main-nav__site-list {
+  display: none;
+  grid-column: 1/-1;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    grid-column: 2/3;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: $desktop) {
+    column-gap: 20px;
+  }
+}
+
+.main-nav__site-item {
+  position: relative;
+
+  &:first-child {
+    @media (max-width: $mobile-only) {
+      border-top: 1px solid $base-secondary;
+    }
+  }
+
+  @media (max-width: $mobile-only) {
+    border-bottom: 1px solid $base-secondary;
+  }
+}
+
+.main-nav__site-link {
+  display: grid;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 20px;
+
+  @media (min-width: $tablet) {
+    &--current::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background-color: $base-primary;
+    }
+  }
+
+  &--current {
+    @media (min-width: $tablet) {
+      color: $base-primary;
+    }
+  }
+
+  &[href]:active {
+    background-color: $base-secondary;
+  }
+
+  @media (min-width: $tablet) {
+    min-height: 80px;
+
+    &:hover {
+      color: $base-primary;
+    }
+
+    &:focus-visible {
+      border: none;
+      outline: none;
+      color: $base-primary;
+    }
+
+    &[href]:active {
+      color: $base-primary;
+      background-color: $base-secondary;
+    }
+  }
+}
+
+.main-nav__user-list {
+  display: flex;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: end;
+  flex-wrap: wrap;
+
+  @media (min-width: $tablet) {
+    grid-column: 3/-1;
+  }
+
+  @media (min-width: $desktop) {
+    column-gap: 20px;
+  }
+}
+
+.main-nav__user-item {
+  @media (max-width: $mobile-only) {
+    height: 60px;
+  }
+
+  &--toggle {
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
+}
+
+.main-nav__user-link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $desktop) {
+    min-height: 80px;
+    padding-right: 20px;
+    padding-left: 44px;
+  }
+
+  & span {
+    @media (max-width: $mobile-tablet) {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: $tablet) {
+      height: 80px;
+    }
+
+    @media (min-width: $desktop) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 20px;
+      margin: auto 0;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &--acount {
+    &::before {
+      background-image: url("../../icons/account.svg");
+    }
+
+    @media (min-width: $tablet) {
+      &:hover,
+      &:active {
+        &::before {
+          background-image: url("../../icons/account-colored.svg");
+        }
+      }
+    }
+  }
+
+  &--basket {
+    &::before {
+      background-image: url("../../icons/basket.svg");
+    }
+
+    @media (min-width: $tablet) {
+      &:hover,
+      &:active {
+        &::before {
+          background-image: url("../../icons/bascet-colored.svg");
+        }
+      }
+    }
+  }
+
+  &:hover {
+    color: $base-primary;
+  }
+
+  &:active {
+    background-color: $base-secondary;
+  }
+}
+
+.main-nav__toggle {
+  width: 60px;
+  height: 60px;
+  border: none;
+  background: transparent url("../../icons/mobile-menu-button.svg") no-repeat center;
+  background-size: 16px 16px;
+
+  &:active {
+    background-color: $base-secondary;
+  }
+}
